@@ -10,11 +10,15 @@ WORKDIR /data/project
 
 
 RUN pip install --upgrade pip && \
-    pip install -r requirements.txt
+    apk update && \
+    apk add gcc python3-dev linux-headers libc-dev
+ 
+
+RUN pip install -r requirements.txt
 
 
 
 EXPOSE 5000
 
 
-CMD ["python","manage.py","runserver","0.0.0.0:5000"]
+CMD ["uwsgi","--ini","uwsgi.ini"]
