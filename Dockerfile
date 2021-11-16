@@ -9,12 +9,11 @@ WORKDIR /data/project
 
 
 
-RUN pip install --upgrade pip && \
-    apk update && \
-    apk add gcc python3-dev linux-headers libc-dev
- 
 
-RUN pip install -r requirements.txt
+RUN apk --no-cache update && \
+    apk add --no-cache gcc python3-dev linux-headers libc-dev &&\
+    pip install --upgrade pip && \
+    pip install -r requirements.txt
 
 
 
