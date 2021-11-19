@@ -8,8 +8,8 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=notes
-#      - MYSQL_USER=notes
-#      - MYSQL_PASSWORD=notes
+      - MYSQL_USER=notes
+      - MYSQL_PASSWORD=notes
     restart: always
 #    ports:
 #      - '3306:3306'
